@@ -18,6 +18,8 @@ class _InputPageState extends State<InputPage> {
   Color femaleCardColor = kInactiveCardColor;
   Gender selectedGender = Gender.male;
   int height = 180;
+  int weight = 75;
+  int age = 21;
 
   @override
   Widget build(BuildContext context) {
@@ -76,8 +78,7 @@ class _InputPageState extends State<InputPage> {
                   children: [
                     Text(
                       height.toString(),
-                      style:
-                          TextStyle(fontSize: 50, fontWeight: FontWeight.w900),
+                      style: kValueTextStyle,
                     ),
                     Text(
                       'cm',
@@ -114,11 +115,60 @@ class _InputPageState extends State<InputPage> {
             Expanded(
               child: InputCard(
                 colour: kInactiveCardColor,
+                cardChild: Column(
+                  children: [
+                    Text(
+                      'Weight',
+                      style: kLabelTextStyle,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      textBaseline: TextBaseline.alphabetic,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      children: [
+                        Text(
+                          weight.toString(),
+                          style: kValueTextStyle,
+                        ),
+                        Text(
+                          'kg',
+                          style: kLabelTextStyle,
+                        )
+                      ],
+                    ),
+                    Row(
+                      children: [],
+                    )
+                  ],
+                ),
               ),
             ),
             Expanded(
               child: InputCard(
                 colour: kInactiveCardColor,
+                cardChild: Column(
+                  children: [
+                    Text(
+                      'Age',
+                      style: kLabelTextStyle,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      textBaseline: TextBaseline.alphabetic,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      children: [
+                        Text(
+                          age.toString(),
+                          style: kValueTextStyle,
+                        ),
+                        Text(
+                          'yrs',
+                          style: kLabelTextStyle,
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           ],

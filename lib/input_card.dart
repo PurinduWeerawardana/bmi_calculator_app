@@ -16,7 +16,7 @@ class InputCard extends StatelessWidget {
             color: colour, borderRadius: BorderRadius.circular(15)),
         // height: 200,
         margin: const EdgeInsets.all(15),
-        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 15),
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
       ),
     );
   }
