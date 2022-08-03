@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'input_card.dart';
 import 'icon_content.dart';
 import 'constants.dart';
+import 'round_icon_button.dart';
 
 class InputPage extends StatefulWidget {
   InputPage({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class _InputPageState extends State<InputPage> {
   Color femaleCardColor = kInactiveCardColor;
   Gender selectedGender = Gender.male;
   int height = 180;
-  int weight = 75;
+  int weight = 60;
   int age = 21;
 
   @override
@@ -126,9 +127,12 @@ class _InputPageState extends State<InputPage> {
                       textBaseline: TextBaseline.alphabetic,
                       crossAxisAlignment: CrossAxisAlignment.baseline,
                       children: [
-                        Text(
-                          weight.toString(),
-                          style: kValueTextStyle,
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10.0),
+                          child: Text(
+                            weight.toString(),
+                            style: kValueTextStyle,
+                          ),
                         ),
                         Text(
                           'kg',
@@ -137,7 +141,25 @@ class _InputPageState extends State<InputPage> {
                       ],
                     ),
                     Row(
-                      children: [],
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        RoundIconButton(
+                          icon: FontAwesomeIcons.minus,
+                          onPress: () {
+                            setState(() {
+                              weight--;
+                            });
+                          },
+                        ),
+                        RoundIconButton(
+                          icon: FontAwesomeIcons.plus,
+                          onPress: () {
+                            setState(() {
+                              weight++;
+                            });
+                          },
+                        )
+                      ],
                     )
                   ],
                 ),
@@ -157,13 +179,37 @@ class _InputPageState extends State<InputPage> {
                       textBaseline: TextBaseline.alphabetic,
                       crossAxisAlignment: CrossAxisAlignment.baseline,
                       children: [
-                        Text(
-                          age.toString(),
-                          style: kValueTextStyle,
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10.0),
+                          child: Text(
+                            age.toString(),
+                            style: kValueTextStyle,
+                          ),
                         ),
                         Text(
                           'yrs',
                           style: kLabelTextStyle,
+                        )
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        RoundIconButton(
+                          icon: FontAwesomeIcons.minus,
+                          onPress: () {
+                            setState(() {
+                              age--;
+                            });
+                          },
+                        ),
+                        RoundIconButton(
+                          icon: FontAwesomeIcons.plus,
+                          onPress: () {
+                            setState(() {
+                              age++;
+                            });
+                          },
                         )
                       ],
                     )
@@ -173,11 +219,25 @@ class _InputPageState extends State<InputPage> {
             ),
           ],
         ),
-        Container(
-          color: const Color(0XFFEB1555),
-          margin: const EdgeInsets.only(top: 10),
-          width: double.infinity,
-          height: 70,
+        GestureDetector(
+          onTap: () {},
+          child: Container(
+            child: Center(
+              child: Text(
+                'Calculate',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  letterSpacing: 4,
+                ),
+              ),
+            ),
+            color: const Color(0XFFEB1555),
+            margin: const EdgeInsets.only(top: 10),
+            width: double.infinity,
+            height: 70,
+          ),
         )
       ],
     );
