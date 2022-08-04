@@ -4,9 +4,14 @@ import 'package:flutter/material.dart';
 import '../constants/constants.dart';
 
 class ResultsPage extends StatelessWidget {
-  const ResultsPage({Key? key}) : super(key: key);
+  ResultsPage(
+      {required this.bmi,
+      required this.resultText,
+      required this.interpretation});
 
-  final double bmi = 26.6;
+  final String bmi;
+  final String resultText;
+  final String interpretation;
 
   @override
   Widget build(BuildContext context) {
@@ -34,19 +39,19 @@ class ResultsPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    'Overweight',
+                    resultText.toUpperCase(),
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.green,
                         fontSize: 23),
                   ),
                   Text(
-                    bmi.toString(),
+                    bmi,
                     style:
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 110),
                   ),
                   Text(
-                    'You have a higher than normal body weight. Try to exercise more.',
+                    interpretation,
                     style: TextStyle(fontSize: 22),
                     textAlign: TextAlign.center,
                   ),
