@@ -1,5 +1,7 @@
+import 'package:bmi_calculator_app/results_page.dart';
 import 'package:flutter/material.dart';
 import 'input_page.dart';
+import 'constants.dart';
 
 void main() {
   runApp(const BMICalculator());
@@ -17,18 +19,13 @@ class _BMICalculatorState extends State<BMICalculator> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark().copyWith(
-          primaryColor: const Color(0xFF0A0E21),
-          scaffoldBackgroundColor: const Color(0XFF0A0E21),
-          appBarTheme: const AppBarTheme(
-            backgroundColor: Color(0XFF0A0E21),
-          )),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('BMI Calculator'),
-          centerTitle: true,
+        primaryColor: const Color(0xFF0A0E21),
+        scaffoldBackgroundColor: const Color(0XFF0A0E21),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0XFF0A0E21),
         ),
-        body: InputPage(),
       ),
+      home: InputPage(),
     );
   }
 }
